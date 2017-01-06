@@ -16,4 +16,9 @@ $connectionInfo = array("UID" => "trident@trident1", "pwd" => "ankit@123", "Data
 $serverName = "tcp:trident1.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
+if($conn)
+{
+	echo"yes";
+}
+
 ?>
