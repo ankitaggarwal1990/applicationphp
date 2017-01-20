@@ -5,6 +5,7 @@
    $user = 'root';
    $pass = '';
 
+echo "sadas";
    // try to conncet to database
    $dbh = new PDO("mysql:dbname={$database};host={$host};port={3306}", $user, $pass);
 
