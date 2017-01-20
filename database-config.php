@@ -12,5 +12,9 @@
 
       echo "unable to connect to database";
    }
+else
+{
+   echo "Connect";
+}
    
 ?>
