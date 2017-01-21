@@ -33,7 +33,7 @@
       <span><i class="fa fa-lock"></i></span>
     </div>
     
-    <button type="submit" class="submit"><i class="fa fa-long-arrow-right"></i></button>
+    <button type="submit" class="submit">Submit<i class="fa fa-long-arrow-right"></i></button>
     
   </fieldset>
   
