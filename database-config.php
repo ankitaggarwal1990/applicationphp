@@ -35,6 +35,8 @@ if (!$link) {
     exit;
 }
 
+$dbh = new PDO("mysql:dbname={$connectstr_dbname};host={$connectstr_dbhost};port={3306}", $connectstr_dbusername, $connectstr_dbpassword);
+
 echo "Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;
 echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
 
