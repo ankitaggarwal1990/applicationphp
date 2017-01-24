@@ -2,6 +2,7 @@
 
 echo $_POST['username'];
  require 'database-config.php';
+echo "a";
 
  session_start();
 
@@ -11,6 +12,7 @@ echo $_POST['username'];
  if(isset($_POST['username'])){
   $username = $_POST['username'];
  }
+echo "b";
  if (isset($_POST['password'])) {
   $password = $_POST['password'];
 
