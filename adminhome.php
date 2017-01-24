@@ -49,14 +49,14 @@
 		<td class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
 		  <!--<li><a href="default.asp"><img src="images/logo.png" alt="HALDIRAM" style="width:42px;height:42px;border:0;"></a></li>-->
-		  <li><a href="http://localhost:8080/Haldiram/adminhome.php">HOME</a></li>
-		  <li><a href="http://localhost:8080/Haldiram/ready_products.php">READY PRODUCTS</a></li>
+		  <li><a href="adminhome.php">HOME</a></li>
+		  <li><a href="ready_products.php">READY PRODUCTS</a></li>
 		  <!--<li><a href="#contact">ORDERED PRODUCTS</a></li>-->
-		  <li><a href="http://localhost:8080/Haldiram/ready_for_dispatch.php">READY TO DISPATCH</a></li>		  
+		  <li><a href="ready_for_dispatch.php">READY TO DISPATCH</a></li>		  
 		  <!--<li><a href="#about">TRANSPORT CARRY ITEM</a></li>-->
-		  <li><a href="http://localhost:8080/Haldiram/transport_environment.php">TRANSPORT ENVIRONMENT</a></li>
+		  <li><a href="transport_environment.php">TRANSPORT ENVIRONMENT</a></li>
 		  <!--<li><a href="#about">TRANSPORTER LOCATION</a></li>-->
-		  <li><a href="http://localhost:8080/Haldiram/delivered_items.php">DELIVERED ITEMS</a></li>
+		  <li><a href="delivered_items.php">DELIVERED ITEMS</a></li>
 		  <li><a href="logout.php">LOGOUT</a></li>
             <li><a href="#">HI!  <?php echo $_SESSION['sess_username'];?></a></li>
             
