@@ -18,20 +18,25 @@ echo "b";
 
  }
  
-echo "dssdfsd";
+
 
  $q = 'SELECT * FROM users WHERE username=:username AND password=:password';
 
+
  $query = $dbh->prepare($q);
+echo "1";
 
  $query->execute(array(':username' => $username, ':password' => $password));
 
+echo "2";
 
  if($query->rowCount() == 0){
   header('Location: index.php?err=1');
  }else{
 
   $row = $query->fetch(PDO::FETCH_ASSOC);
+  
+  echo "dssdfsd";
 
   session_regenerate_id();
   $_SESSION['sess_user_id'] = $row['id'];
