@@ -14,6 +14,7 @@
 
  }
  
+echo "dssdfsd";
 
  $q = 'SELECT * FROM users WHERE username=:username AND password=:password';
 
