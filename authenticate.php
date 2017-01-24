@@ -23,7 +23,7 @@ echo "b";
  $q = 'SELECT * FROM users WHERE username=:username AND password=:password';
 
 
- $query = $dbh->prepare($q);
+ $query = $link->prepare($q);
 echo "1";
 
  $query->execute(array(':username' => $username, ':password' => $password));
