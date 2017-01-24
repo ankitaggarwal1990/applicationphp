@@ -1,4 +1,6 @@
 <?php 
+
+echo $_POST['username'];
  require 'database-config.php';
 
  session_start();
