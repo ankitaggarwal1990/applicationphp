@@ -1,8 +1,8 @@
 <?php
 echo "Connection to database successfully";
    // connect to mongodb
-//    $m = new MongoClient();
-//    echo "Connection to database successfully";
+    $m = new MongoClient();
+    echo "Connection to database successfully";
 	
 //    // select a database
 //    $db = $m->mydb;
