@@ -45,12 +45,12 @@
 <!--<a href="default.asp"><img src="images/logo.png" alt="HALDIRAM" style="width:42px;height:42px;border:0;"></a>-->
         <div >
 		<table style="padding:10px; border-radius:15px; opacity=.8;">
-		<td><a href="http://localhost:8080/Haldiram/index.php"><img src="images/logo.png" alt="HALDIRAM"></a></td>
+		<td><a href="http://localhost:8080/Haldiram/index.php"><img src="../images/logo.png" alt="HALDIRAM"></a></td>
 		<td class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
 		  <!--<li><a href="default.asp"><img src="images/logo.png" alt="HALDIRAM" style="width:42px;height:42px;border:0;"></a></li>-->
 		  <li><a href="adminhome.php">HOME</a></li>
-		  <li><a href="ready_products.php">READY PRODUCTS</a></li>
+		  <li><a href="ready_products.php">Nodes</a></li>
 		  <!--<li><a href="#contact">ORDERED PRODUCTS</a></li>-->
 		  <li><a href="ready_for_dispatch.php">READY TO DISPATCH</a></li>		  
 		  <!--<li><a href="#about">TRANSPORT CARRY ITEM</a></li>-->
