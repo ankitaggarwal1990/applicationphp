@@ -92,7 +92,7 @@ $locationid = $_POST[locationid];
 $retailername = $_POST[retailername];
 
 
-	$query = "INSERT INTO `retaler`(`RetailerID`, `LocationID`, `RetailerName`) VALUES ('$retailerid', '$locationid', '$retailername')";
+	$query = "INSERT INTO `retailer`(`RetailerID`, `LocationID`, `RetailerName`) VALUES ('$retailerid', '$locationid', '$retailername')";
 	
 	//mysql_select_db('database');
 	//$retval = mysql_query($query,$conn);
@@ -109,6 +109,38 @@ $retailername = $_POST[retailername];
 		header('Location: retailers.php?err=2');
 	}
 }
+
+
+
+
+
+
+if(isset($_POST['contactsubmitted'])){
+$warehouseid = $_POST[warehouseid];
+$warehousename = $_POST[warehousename];
+$location = $_POST[location];
+$contact_no = $_POST[contact_no];
+
+
+	$query = "INSERT INTO `warehouse`(`warehouse_name`, `warehouse_id`, `location`, `contact_no`) VALUES ('$warehouseid', '$warehousename', '$location', '$contact_no')";
+	
+	//mysql_select_db('database');
+	//$retval = mysql_query($query,$conn);
+	$query1 = $dbh->exec($query);
+	
+	
+	if($query1)
+	{
+		echo "Submitted";
+		header('Location: warehouses.php?err=1');
+	}
+	else{
+		echo "error";
+		header('Location: warehouses.php?err=2');
+	}
+}
+
+
 
 
 
