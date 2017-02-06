@@ -47,7 +47,7 @@ echo "2";
   session_write_close();
 
   if( $_SESSION['sess_userrole'] == "admin"){
-   header('Location: adminhome.php');
+   header('Location: admin/index.php');
   }else{
    header('Location: userhome.php');
   }
