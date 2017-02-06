@@ -1,5 +1,27 @@
 <!DOCTYPE html>
 
+<?php
+
+session_start();
+error_reporting(E_ALL ^ E_NOTICE);
+$sessionuser = $_SESSION['sess_userrole'];
+if( sessionuser == "admin"){
+   header('Location: admin/index.php');
+  } 
+  else if( sessionuser == "warehouse"){
+   header('Location: warehouse/index.php');
+  }
+  else if( sessionuser == "retailer"){
+   header('Location: retailer/index.php');
+  }
+  else if( sessionuser == "transporter"){
+   header('Location: transporter/index.php');
+  }
+  
+
+
+?>
+
 <html >
 <head>
   <meta charset="UTF-8">
@@ -33,7 +55,7 @@
       <span><i class="fa fa-lock"></i></span>
     </div>
     
-    <button type="submit" class="submit">→<i class="fa fa-long-arrow-right"></i></button>
+    <button type="submit" class="submit"><i class="fa fa-long-arrow-right">→</i></button>
     
   </fieldset>
   
