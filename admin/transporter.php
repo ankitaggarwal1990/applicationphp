@@ -61,14 +61,13 @@
     </div>    
 	
 	<div class="login">
-       <legend class="legend" >ADD PRODUCT</legend>
+       <legend class="legend" >ADD TRANSPORTER</legend>
   <form action="func.php" method="post">
-  <div class="input"><label> <input name="productid" type="text" placeholder="PRODUCT ID" required/></label></div>
-  <div class="input"><label><input name="producttype" type="text" placeholder="PRODUCT TYPE" required/></label></div>
-  <div class="input"><label> <input name="productprice" type="text" placeholder="PRODUCT PRICE" required/></label></div>
-  <div class="input"><label><input name="perishduration" type="text" placeholder="PERISH DURATION" required/></label></div>
-  <div class="input"><label><input name="weight" type="text" placeholder="WEIGHT" required/></label></div>
-  <button class="submit" name="submitted" type="submit" placeholder="Submit" >→</button>
+  <div class="input"><label> <input name="transporterid" type="text" placeholder="TRANSPORTER ID" required/></label></div>
+  <div class="input"><label><input name="transportername" type="text" placeholder="NAME" required/></label></div>
+  <div class="input"><label> <input name="accountnumber" type="text" placeholder="ACCOUNT NUMBER" required/></label></div>
+  <div class="input"><label><input name="phonenumber" type="text" placeholder="PHONE NUMBER" required/></label></div>
+  <button class="submit" name="transportsubmitted" type="submit" placeholder="Submit" >→</button>
   </form>
   <div class="feedback">
   <?php 

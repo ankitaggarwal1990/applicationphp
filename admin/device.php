@@ -61,14 +61,17 @@
     </div>    
 	
 	<div class="login">
-       <legend class="legend" >ADD PRODUCT</legend>
+       <legend class="legend" >ADD DEVICE</legend>
   <form action="func.php" method="post">
-  <div class="input"><label> <input name="productid" type="text" placeholder="PRODUCT ID" required/></label></div>
-  <div class="input"><label><input name="producttype" type="text" placeholder="PRODUCT TYPE" required/></label></div>
-  <div class="input"><label> <input name="productprice" type="text" placeholder="PRODUCT PRICE" required/></label></div>
-  <div class="input"><label><input name="perishduration" type="text" placeholder="PERISH DURATION" required/></label></div>
-  <div class="input"><label><input name="weight" type="text" placeholder="WEIGHT" required/></label></div>
-  <button class="submit" name="submitted" type="submit" placeholder="Submit" >→</button>
+  <div class="input"><label> <input name="deviceid" type="text" placeholder="DEVICE ID" required/></label></div>
+  <div class="input"><label><input name="devicetype" type="text" placeholder="DEVICE TYPE" required/></label></div>
+  <div class="input"><label> <input name="devicekey" type="text" placeholder="DEVICE KEY" required/></label></div>
+  <div class="input"><label><input name="hostname" type="text" placeholder="HOST NAME" required/></label></div>
+  <div class="input"><label><input name="movable" type="text" placeholder="IS MOVABLE" required/></label></div>
+  <div class="input"><label><input name="locationID" type="text" placeholder="LOCATION ID" required/></label></div>
+  <div class="input"><label><input name="devicenames" type="text" placeholder="DEVICE NAME" required/></label></div>
+  
+  <button class="submit" name="devicesubmitted" type="submit" placeholder="Submit" >→</button>
   </form>
   <div class="feedback">
   <?php 

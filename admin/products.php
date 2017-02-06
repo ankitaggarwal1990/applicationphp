@@ -4,6 +4,7 @@
     if(!isset($_SESSION['sess_username']) || $role!="admin"){
       header('Location: index.php?err=2');
     }
+	require '../database-config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,17 +60,21 @@
           <div class="col-md-3"></div>
         </div>
     </div>    
+	<?php
+	
+	$query = "SELECT * FROM products";
+	
+	//mysql_select_db('database');
+	//$retval = mysql_query($query,$conn);
+	$query1 = $dbh->exec($query);
+	
+	echo $query1['productsID'];
+	?>
 	
 	<div class="login">
-       <legend class="legend" >ADD PRODUCT</legend>
-  <form action="func.php" method="post">
-  <div class="input"><label> <input name="productid" type="text" placeholder="PRODUCT ID" required/></label></div>
-  <div class="input"><label><input name="producttype" type="text" placeholder="PRODUCT TYPE" required/></label></div>
-  <div class="input"><label> <input name="productprice" type="text" placeholder="PRODUCT PRICE" required/></label></div>
-  <div class="input"><label><input name="perishduration" type="text" placeholder="PERISH DURATION" required/></label></div>
-  <div class="input"><label><input name="weight" type="text" placeholder="WEIGHT" required/></label></div>
-  <button class="submit" name="submitted" type="submit" placeholder="Submit" >→</button>
-  </form>
+       <legend class="legend" >ADD PRODUCT<?php echo $query1['productsID'];
+	?></legend>
+  
   <div class="feedback">
   <?php 
 

@@ -61,14 +61,13 @@
     </div>    
 	
 	<div class="login">
-       <legend class="legend" >ADD PRODUCT</legend>
+       <legend class="legend" >ADD RETAILER</legend>
   <form action="func.php" method="post">
-  <div class="input"><label> <input name="productid" type="text" placeholder="PRODUCT ID" required/></label></div>
-  <div class="input"><label><input name="producttype" type="text" placeholder="PRODUCT TYPE" required/></label></div>
-  <div class="input"><label> <input name="productprice" type="text" placeholder="PRODUCT PRICE" required/></label></div>
-  <div class="input"><label><input name="perishduration" type="text" placeholder="PERISH DURATION" required/></label></div>
-  <div class="input"><label><input name="weight" type="text" placeholder="WEIGHT" required/></label></div>
-  <button class="submit" name="submitted" type="submit" placeholder="Submit" >→</button>
+  <div class="input"><label> <input name="retailerid" type="text" placeholder="RETAILER ID" required/></label></div>
+  <div class="input"><label><input name="locationid" type="text" placeholder="LOCATION ID" required/></label></div>
+  <div class="input"><label> <input name="retailername" type="text" placeholder="RETAILER NAME" required/></label></div>
+  
+  <button class="submit" name="retailerasubmitted" type="submit" placeholder="Submit" >→</button>
   </form>
   <div class="feedback">
   <?php 
