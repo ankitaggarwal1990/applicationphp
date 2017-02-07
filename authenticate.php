@@ -48,8 +48,15 @@ echo "2";
 
   if( $_SESSION['sess_userrole'] == "admin"){
    header('Location: admin/index.php');
-  }else{
-   header('Location: userhome.php');
+  } 
+  else if( $_SESSION['sess_userrole'] == "warehouse"){
+   header('Location: warehouse/index.php');
+  }
+  else if( $_SESSION['sess_userrole'] == "retailer"){
+   header('Location: retailer/index.php');
+  }
+  else if( $_SESSION['sess_userrole'] == "transporter"){
+   header('Location: transporter/index.php');
   }
   
   
