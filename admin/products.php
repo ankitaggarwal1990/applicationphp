@@ -41,7 +41,7 @@
 		  <li><a href="transporter.php">TRANSPORTER</a></li>
 		  <!--<li><a href="#about">TRANSPORTER LOCATION</a></li>-->
 		  <li><a href="retailers.php">RETAILERS</a></li>
-		  <li><a href="logout.php">LOGOUT</a></li>
+		  <li><a href="../logout.php">LOGOUT</a></li>
             <li><a href="#">HI!  <?php echo $_SESSION['sess_username'];?></a></li>
             
           </ul>
