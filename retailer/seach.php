@@ -91,7 +91,7 @@ function showUser(str) {
 
 <?php 
 
-$con = mysqli_connect('localhost','root','','database');
+$con = mysqli_connect('localhost','azure','6#vWHD_$','localdb');
 if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
 }
