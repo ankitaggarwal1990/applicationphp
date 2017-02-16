@@ -86,12 +86,12 @@ function showUser(str) {
 
 <form>
   <input type="text" name="search" onkeyup="showUser(this.value)" placeholder="Search..">
-</form
+	</form>
 
 
 <?php 
 
-$con = mysqli_connect('localhost','azure','6#vWHD_$','localdb');
+$con = mysqli_connect('127.0.0.1:49646','azure','6#vWHD_$','localdb');
 if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
 }
@@ -134,9 +134,8 @@ mysqli_close($con);
 
 <tr>
 <td></td><td></td><td></td><td></td><td></td><td><div ><button class="button" type="submit" name="place_order">Place Order</button></div></td></tr>
-</table>
-</form>
-</div>
+
+	</form></table></div>
 
 
 <table id="txtHint">
