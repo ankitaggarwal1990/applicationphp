@@ -29,25 +29,26 @@
     
         <div >
 		<table style="padding:10px; border-radius:15px; opacity=.8;">
-		<td><a href="http://localhost:8080/Haldiram/index.php"><img src="../images/logo.png" alt="HALDIRAM"></a></td>
+		<td><!--<a href="http://localhost:8080/Haldiram/index.php"><img src="../images/logo.png" alt="HALDIRAM"></a>--></td>
 		<td class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-		  <!--<li><a href="default.asp"><img src="images/logo.png" alt="HALDIRAM" style="width:42px;height:42px;border:0;"></a></li>-->
-		  <li><a href="index.php">PRODUCTION</a></li>
+		  <li><a href="index.php">ALERTS</a></li>
+		  <li><a href="addproduct.php">ADD PRODUCTS</a></li>
 		  <li><a href="products.php">PRODUCTS</a></li>
-		  <!--<li><a href="#contact">ORDERED PRODUCTS</a></li>-->
-		  <li><a href="warehouses.php">WAREHOUSES</a></li>		  
-		  <!--<li><a href="#about">TRANSPORT CARRY ITEM</a></li>-->
-		  <li><a href="transporter.php">TRANSPORTER</a></li>
-		  <!--<li><a href="#about">TRANSPORTER LOCATION</a></li>-->
-		  <li><a href="retailers.php">RETAILERS</a></li>
-		  <li><a href="../logout.php">LOGOUT</a></li>
+		  <li><a href="location.php">ADD LOCATION</a></li>
+		  <li><a href="warehouses.php">ADD WAREHOUSES</a></li>		  
+		  <li><a href="transporter.php">ADD TRANSPORTER</a></li>
+		  <li><a href="retailers.php"> ADD RETAILERS</a></li>
+		  <li><a href="orders.php">ORDERS</a></li>
+		  <li><a href="attach.php">ORDERS ATTACH WITH RFID AND TRANSPORTER</a></li>
+		  <li><a href="track.php">TRACK PRODUCT</a></li>
+		  <li><a href="logout.php">LOGOUT</a></li>
             <li><a href="#">HI!  <?php echo $_SESSION['sess_username'];?></a></li>
             
           </ul>
 		  </td>
 		  </table>
-        </div>      
+        </div>   
 
      <div class="container homepage">
       <div class="row">
@@ -72,27 +73,15 @@
 	?>
 	
 	<div class="login">
-       <legend class="legend" >ADD PRODUCT<?php echo $query1['productsID'];
+       <legend class="legend" >PRODUCT DETAILS<?php echo $query1['productsID'];
 	?></legend>
+	<table class="table">
+	<th>PRODUCT ID</th><th>PRODUCT TYPE</th><th>PRODUCT PRICE</th><th>PERISH DURATION</th><th>WEIGHT</th>
+	<td><?php echo $query1['productID'];?> </td> <td><?php echo $query1['productType'];?> </td> <td><?php echo $query1['productPrice'];?> </td> 
+	<td><?php echo $query1['perishDuration'];?> </td><?php echo $query1['weight'];?> <td> </td>
+	</table>
   
-  <div class="feedback">
-  <?php 
-
-                                $errors = array(
-                                    1=>"Submitted Successfully!",
-                                   2=>"Not Successfully!"
-                                  );
-
-                                $error_id = isset($_GET['err']) ? (int)$_GET['err'] : 0;
-
-                                if ($error_id == 1) {
-                                       echo '<p class="text-danger">'.$errors[$error_id].'</p>';
-                                  }elseif ($error_id == 2) {
-                                     echo '<p class="text-danger">'.$errors[$error_id].'</p>';
-                                  }
-                               ?>  
-  	
-  </div>
+  
 </div>
   
 	

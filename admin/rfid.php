@@ -38,6 +38,8 @@
 		  <li><a href="warehouses.php">ADD WAREHOUSES</a></li>		  
 		  <li><a href="transporter.php">ADD TRANSPORTER</a></li>
 		  <li><a href="retailers.php"> ADD RETAILERS</a></li>
+		  <li><a href="rfid.php"> ADD RFID TAG</a></li>
+		  <li><a href="productattach.php">PRODUCT ATTACH WITH RFID TAG</a></li>
 		  <li><a href="orders.php">ORDERS</a></li>
 		  <li><a href="attach.php">ORDERS ATTACH WITH RFID AND TRANSPORTER</a></li>
 		  <li><a href="track.php">TRACK PRODUCT</a></li>
@@ -47,7 +49,7 @@
           </ul>
 		  </td>
 		  </table>
-        </div>     
+        </div> 
 
      <div class="container homepage">
       <div class="row">
@@ -62,14 +64,14 @@
     </div>    
 	
 	<div class="login">
-       <legend class="legend" >ADD WAREHOUSE</legend>
+       <legend class="legend" >ADD PRODUCT</legend>
   <form action="func.php" method="post">
-  <div class="input"><label> <input name="warehouseid" type="text" placeholder="WAREHOUSE ID" required/></label></div>
-  <div class="input"><label><input name="warehousename" type="text" placeholder="WAREHOUSE NAME" required/></label></div>
-  <div class="input"><label> <input name="location" type="text" placeholder="LOCATION" required/></label></div>
-  <div class="input"><label><input name="contact_no" type="text" placeholder="CONTACT NUMBER" required/></label></div>
-  
-  <button class="submit" name="contactsubmitted" type="submit" placeholder="Submit" >→</button>
+  <div class="input"><label> <input name="productid" type="text" placeholder="PRODUCT ID" required/></label></div>
+  <div class="input"><label><input name="producttype" type="text" placeholder="PRODUCT TYPE" required/></label></div>
+  <div class="input"><label> <input name="productprice" type="text" placeholder="PRODUCT PRICE" required/></label></div>
+  <div class="input"><label><input name="perishduration" type="text" placeholder="PERISH DURATION" required/></label></div>
+  <div class="input"><label><input name="weight" type="text" placeholder="WEIGHT" required/></label></div>
+  <button class="submit" name="submitted" type="submit" placeholder="Submit" >→</button>
   </form>
   <div class="feedback">
   <?php 

@@ -2,7 +2,7 @@
     session_start();
     $role = $_SESSION['sess_userrole'];
     if(!isset($_SESSION['sess_username']) || $role!="admin"){
-      header('Location: ../index.php?err=2');
+      header('Location: index.php?err=2');
     }
 ?>
 <!DOCTYPE html>
@@ -28,25 +28,26 @@
     
         <div >
 		<table style="padding:10px; border-radius:15px; opacity=.8;">
-		<td><a href="http://localhost:8080/Haldiram/index.php"><img src="../images/logo.png" alt="HALDIRAM"></a></td>
+		<td><!--<a href="http://localhost:8080/Haldiram/index.php"><img src="../images/logo.png" alt="HALDIRAM"></a>--></td>
 		<td class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-		  <!--<li><a href="default.asp"><img src="images/logo.png" alt="HALDIRAM" style="width:42px;height:42px;border:0;"></a></li>-->
-		  <li><a href="index.php">PRODUCTION</a></li>
+		  <li><a href="index.php">ALERTS</a></li>
+		  <li><a href="addproduct.php">ADD PRODUCTS</a></li>
 		  <li><a href="products.php">PRODUCTS</a></li>
-		  <!--<li><a href="#contact">ORDERED PRODUCTS</a></li>-->
-		  <li><a href="warehouses.php">WAREHOUSES</a></li>		  
-		  <!--<li><a href="#about">TRANSPORT CARRY ITEM</a></li>-->
-		  <li><a href="transporter.php">TRANSPORTER</a></li>
-		  <!--<li><a href="#about">TRANSPORTER LOCATION</a></li>-->
-		  <li><a href="retailers.php">RETAILERS</a></li>
-		  <li><a href="../logout.php">LOGOUT</a></li>
+		  <li><a href="location.php">ADD LOCATION</a></li>
+		  <li><a href="warehouses.php">ADD WAREHOUSES</a></li>		  
+		  <li><a href="transporter.php">ADD TRANSPORTER</a></li>
+		  <li><a href="retailers.php"> ADD RETAILERS</a></li>
+		  <li><a href="orders.php">ORDERS</a></li>
+		  <li><a href="attach.php">ORDERS ATTACH WITH RFID AND TRANSPORTER</a></li>
+		  <li><a href="track.php">TRACK PRODUCT</a></li>
+		  <li><a href="logout.php">LOGOUT</a></li>
             <li><a href="#">HI!  <?php echo $_SESSION['sess_username'];?></a></li>
             
           </ul>
 		  </td>
 		  </table>
-        </div>      
+        </div>  
 
      <div class="container homepage">
       <div class="row">

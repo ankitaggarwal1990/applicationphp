@@ -2,7 +2,7 @@
     session_start();
     $role = $_SESSION['sess_userrole'];
     if(!isset($_SESSION['sess_username']) || $role!="admin"){
-      header('Location: ../index.php?err=2');
+      header('Location: index.php?err=2');
     }
 ?>
 <!DOCTYPE html>
@@ -28,25 +28,28 @@
     
         <div >
 		<table style="padding:10px; border-radius:15px; opacity=.8;">
-		<td><a href="http://localhost:8080/Haldiram/index.php"><img src="../images/logo.png" alt="HALDIRAM"></a></td>
+		<td><!--<a href="http://localhost:8080/Haldiram/index.php"><img src="../images/logo.png" alt="HALDIRAM"></a>--></td>
 		<td class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-		  <!--<li><a href="default.asp"><img src="images/logo.png" alt="HALDIRAM" style="width:42px;height:42px;border:0;"></a></li>-->
-		  <li><a href="index.php">PRODUCTION</a></li>
+		  <li><a href="index.php">ALERTS</a></li>
+		  <li><a href="addproduct.php">ADD PRODUCTS</a></li>
 		  <li><a href="products.php">PRODUCTS</a></li>
-		  <!--<li><a href="#contact">ORDERED PRODUCTS</a></li>-->
-		  <li><a href="warehouses.php">WAREHOUSES</a></li>		  
-		  <!--<li><a href="#about">TRANSPORT CARRY ITEM</a></li>-->
-		  <li><a href="transporter.php">TRANSPORTER</a></li>
-		  <!--<li><a href="#about">TRANSPORTER LOCATION</a></li>-->
-		  <li><a href="retailers.php">RETAILERS</a></li>
-		  <li><a href="../logout.php">LOGOUT</a></li>
+		  <li><a href="location.php">ADD LOCATION</a></li>
+		  <li><a href="warehouses.php">ADD WAREHOUSES</a></li>		  
+		  <li><a href="transporter.php">ADD TRANSPORTER</a></li>
+		  <li><a href="retailers.php"> ADD RETAILERS</a></li>
+		  <li><a href="rfid.php"> ADD RFID TAG</a></li>
+		  <li><a href="productattach.php">PRODUCT ATTACH WITH RFID TAG</a></li>
+		  <li><a href="orders.php">ORDERS</a></li>
+		  <li><a href="attach.php">ORDERS ATTACH WITH RFID AND TRANSPORTER</a></li>
+		  <li><a href="track.php">TRACK PRODUCT</a></li>
+		  <li><a href="logout.php">LOGOUT</a></li>
             <li><a href="#">HI!  <?php echo $_SESSION['sess_username'];?></a></li>
             
           </ul>
 		  </td>
 		  </table>
-        </div>      
+        </div>
 
      <div class="container homepage">
       <div class="row">
@@ -60,34 +63,7 @@
         </div>
     </div>    
 	
-	<div class="login">
-       <legend class="legend" >ADD PRODUCT</legend>
-  <form action="func.php" method="post">
-  <div class="input"><label> <input name="productid" type="text" placeholder="PRODUCT ID" required/></label></div>
-  <div class="input"><label><input name="producttype" type="text" placeholder="PRODUCT TYPE" required/></label></div>
-  <div class="input"><label> <input name="productprice" type="text" placeholder="PRODUCT PRICE" required/></label></div>
-  <div class="input"><label><input name="perishduration" type="text" placeholder="PERISH DURATION" required/></label></div>
-  <div class="input"><label><input name="weight" type="text" placeholder="WEIGHT" required/></label></div>
-  <button class="submit" name="submitted" type="submit" placeholder="Submit" >→</button>
-  </form>
-  <div class="feedback">
-  <?php 
-
-                                $errors = array(
-                                    1=>"Submitted Successfully!",
-                                   2=>"Not Successfully!"
-                                  );
-
-                                $error_id = isset($_GET['err']) ? (int)$_GET['err'] : 0;
-
-                                if ($error_id == 1) {
-                                       echo '<p class="text-danger">'.$errors[$error_id].'</p>';
-                                  }elseif ($error_id == 2) {
-                                     echo '<p class="text-danger">'.$errors[$error_id].'</p>';
-                                  }
-                               ?>  
-  	
-  </div>
+	
 </div>
   
 	
