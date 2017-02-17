@@ -43,6 +43,7 @@ tr:nth-child(even) {
     <h3 class="w3-padding-64"><b>Haldiram</b></h3>
   </div>
   <a href="#" onclick="w3_close()" class="w3-padding w3-hover-white">Home</a> 
+  <a href="seach.php" class="w3-padding w3-hover-white">Place Order</a>
   <a href="#showcase" onclick="w3_close()" class="w3-padding w3-hover-white">Ready For Dispatch</a> 
   <a href="#services" onclick="w3_close()" class="w3-padding w3-hover-white">Track Product</a> 
   <a href="#designers" onclick="w3_close()" class="w3-padding w3-hover-white">Analytical Insight</a> 
