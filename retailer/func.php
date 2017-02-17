@@ -31,16 +31,16 @@ echo $orderid;
 while($row = mysqli_fetch_array($result)) {
 	echo $row['productID'];
 	
-	$product = $row['productID'];
-	if(isset($_POST[$product])){
-		$quantity1 = "quantity".$_POST[$product];
-		echo $quantity = $_POST[$quantity1];
+	echo $product = $row['productID'];
+	//if(isset($_POST[$product])){
+		//$quantity1 = "quantity".$_POST[$product];
+		//echo $quantity = $_POST[$quantity1];
 		
 		//$query = "INSERT INTO `orders`(`order_id`, `product_id`, `quantity`, `rfid_tag_id`, `destination_id`, `delivery_time`, `transport_id`, `product_total_amount`) VALUES ('$orderid','$product','$quantity',1,1,1,now(),1)"
 		//$result1 = mysqli_query($con,$query);
 		
 		echo "dsdfsd";
-	
+	//}
 	
 	
 }
