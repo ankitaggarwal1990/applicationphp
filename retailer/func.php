@@ -33,7 +33,7 @@ while($row = mysqli_fetch_array($result)) {
 		$quantity1 = "quantity".$_POST[$product];
 		$quantity = $_POST[$quantity1];
 		
-		$query = "INSERT INTO `orders`(`order_id`, `product_id`, `quantity`, `rfid_tag_id`, `destination_id`, `transport_id`, `delivery_time`, `product_total_amount`) VALUES ('$orderid','$product','$quantity',0,0,0,0,0)"
+		$query = "INSERT INTO `orders`(`order_id`, `product_id`, `quantity`, `rfid_tag_id`, `destination_id`, `transport_id`, `product_total_amount`) VALUES ('$orderid','$product','$quantity',0,0,0,0)"
 		$result1 = mysqli_query($con,$query);
 	}
 }
