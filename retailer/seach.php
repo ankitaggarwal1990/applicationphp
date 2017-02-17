@@ -113,12 +113,13 @@ $result = mysqli_query($con,$sql);
 <th>Price</th>
 <th>Quantity</th>
 </tr>
+	<form action="func.php" method="POST"> 
 <?php
 $i=0;
 while($row = mysqli_fetch_array($result)) {
 	
 	?>
-	<form action="func.php" method="POST"> 
+	
 <tr>
 <td><input type="checkbox" value="checked" name="<?php echo $i ?>"/>
 <td><input type="text" readonly="readonly" name="<?php echo $row['productID'] ?>" value="<?php echo $row['productID'] ?>" > </td>
