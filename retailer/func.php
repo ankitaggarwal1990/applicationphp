@@ -49,6 +49,16 @@ while($row = mysqli_fetch_array($result)) {
 	//echo "asdfghjkl";
 }
 
+if(isset($_POST['final_order']))
+{
+	$orderno = $_POST['final_order'];
+	$query = "UPDATE `orders` SET `status`=1 WHERE `order_id`= $orderno";		
+    $result1 = mysqli_query($con,$query);
+	header('Location: orders.php');
+	
+	
+}
+
 
 
 ?>
