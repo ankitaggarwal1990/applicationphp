@@ -6,7 +6,7 @@ if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
 }
 
-mysqli_select_db($con,"ajax_demo");
+//mysqli_select_db($con,"ajax_demo");
 
 
 if(isset($_POST['place_order'])){
