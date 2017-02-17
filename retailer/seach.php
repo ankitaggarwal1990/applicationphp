@@ -35,7 +35,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 th {
 	text-align: center;
-    background-color: #4CAF50;
+    background-color: #f44336;
     color: white;
 }
 td {
@@ -44,7 +44,7 @@ td {
 }
 
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: #f44336; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
