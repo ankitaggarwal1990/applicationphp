@@ -10,5 +10,11 @@ else{
 }
 
 
+if(isset($_POST['place_order'])){
+
+	echo "asdfghjkl";
+}
+
+
 
 ?>
