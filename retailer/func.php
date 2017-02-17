@@ -32,7 +32,7 @@ while($row = mysqli_fetch_array($result)) {
 	echo $row['productID'];
 	
 	echo $product = $row['productID'];
-	//if(isset($_POST[$product])){
+	if(isset($_POST[$product])){
 		//$quantity1 = "quantity".$_POST[$product];
 		//echo $quantity = $_POST[$quantity1];
 		
@@ -40,7 +40,7 @@ while($row = mysqli_fetch_array($result)) {
 		//$result1 = mysqli_query($con,$query);
 		
 		echo "dsdfsd";
-	//}
+	}
 	
 	
 }
