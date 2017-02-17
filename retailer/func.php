@@ -24,6 +24,18 @@ $orderid =0;
 while($row2 = mysqli_fetch_array($result2)) {
  echo $orderid = $row2['order_id'];
 }
+	
+	$orderid= $orderid + 1;
+
+echo $orderid;
+while($row = mysqli_fetch_array($result)) {
+	echo $row['productID'];
+	
+	
+	
+}
+	
+	
 	//echo "asdfghjkl";
 }
 
