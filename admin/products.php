@@ -4,7 +4,7 @@
     if(!isset($_SESSION['sess_username']) || $role!="admin"){
       header('Location: index.php?err=2');
     }
-	require '../database-config.php';
+	//require '../database-config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,35 +50,33 @@
 		  </table>
         </div>   
 
-     <div class="container homepage">
-      <div class="row">
-         <div class="col-md-3"></div>
-            <div class="col-md-6">
-			  <table  class="table" id='transport'>				   
-		      </table>
-			  
-            </div>
-          <div class="col-md-3"></div>
-        </div>
-    </div>    
 	<?php
+	$con = mysqli_connect('127.0.0.1:49646','azure','6#vWHD_$','localdb');
+if (!$con) {
+    die('Could not connect: ' . mysqli_error($con));
+}
 	
-	$query = "SELECT * FROM products";
+	mysqli_select_db($con,"ajax_demo");
+$sql="SELECT * FROM products";
+
+$result = mysqli_query($con,$sql);
+
+?>
+
 	
-	//mysql_select_db('database');
-	//$retval = mysql_query($query,$conn);
-	$query1 = $dbh->exec($query);
 	
-	echo $query1['productsID'];
-	?>
 	
 	<div class="login">
-       <legend class="legend" >PRODUCT DETAILS<?php echo $query1['productsID'];
-	?></legend>
+       <legend class="legend">PRODUCT DETAILS</legend>
 	<table class="table">
-	<th>PRODUCT ID</th><th>PRODUCT TYPE</th><th>PRODUCT PRICE</th><th>PERISH DURATION</th><th>WEIGHT</th>
-	<td><?php echo $query1['productID'];?> </td> <td><?php echo $query1['productType'];?> </td> <td><?php echo $query1['productPrice'];?> </td> 
-	<td><?php echo $query1['perishDuration'];?> </td><?php echo $query1['weight'];?> <td> </td>
+	<tr><th>PRODUCT ID</th><th>PRODUCT TYPE</th><th>PRODUCT PRICE</th><th>PERISH DURATION</th><th>WEIGHT</th><tr>
+	
+	<?php while($query1 = mysqli_fetch_array($result)) { ?>
+	<tr><td><?php echo $query1['productID'];?> </td> <td><?php echo $query1['productType'];?> </td> <td><?php echo $query1['productPrice'];?> </td> 
+	<td><?php echo $query1['perishDuration'];?> </td><?php echo $query1['weight'];?> <td> </td></tr>
+	
+	
+	<?php } ?>
 	</table>
   
   
@@ -87,8 +85,8 @@
 	
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    
     </body>
 </html>
