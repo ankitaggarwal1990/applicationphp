@@ -1,7 +1,7 @@
 <?php
 
 
-echo "Order Successfully Created";
+echo "Order Successfully Created!";
 
 
 ?>
