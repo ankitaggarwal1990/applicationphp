@@ -35,9 +35,9 @@ while($row = mysqli_fetch_array($result)) {
 	if(isset($_POST[$product])){
 		$quantity1 = "quantity".$_POST[$product];
 		echo $quantity = $_POST[$quantity1];
-		
+		$sql = "INSERT INTO `orders` (`order_id`, `product_id`, `quantity`, `rfid_tag_id`, `destination_id`, `transport_id`, `delivery_time`, `product_total_amount`) VALUES (\'2\', \'2\', \'2\', \'2\', \'2\', \'2\', NOW(), \'2\')";
 		//$query = "INSERT INTO `orders`(`order_id`, `product_id`, `quantity`, `rfid_tag_id`, `destination_id`, `delivery_time`, `transport_id`, `product_total_amount`) VALUES ('$orderid','$product','$quantity',1,1,1,now(),1)"
-		//$result1 = mysqli_query($con,$query);
+		$result1 = mysqli_query($con,$sql);
 		
 		//echo "dsdfsd";
 	}
