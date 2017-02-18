@@ -46,7 +46,7 @@ while($row = mysqli_fetch_array($result)) {
 	
 }
 	
-	//header('Location: finalorder.php?order='.$orderid.'');
+	header('Location: finalorder.php?order='.$orderid.'');
 	//echo "asdfghjkl";
 }
 
