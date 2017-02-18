@@ -12,6 +12,7 @@ $perishduration   = $_POST['perishduration'];
 $weight = $_POST['weight'];
 	$name= $POST['productname'];
 
+	echo $name;
 	$query = "INSERT INTO `products` (`productID`, `productType`, `productPrice`, `perishDuration`, `weight`,`product_name`, `status`) VALUES ('$product', '$type', '$productprice', '$perishduration', '$weight', '$name', 0)";
 	
 	//mysql_select_db('database');
@@ -22,11 +23,11 @@ $weight = $_POST['weight'];
 	if($query1)
 	{
 		echo "Submitted";
-		header('Location: addproduct.php?err=1');
+		//header('Location: addproduct.php?err=1');
 	}
 	else{
 		echo "error";
-		header('Location: addproduct.php?err=2');
+		//header('Location: addproduct.php?err=2');
 	}
 }
 if(isset($_POST['transportsubmitted'])){
