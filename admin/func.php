@@ -7,7 +7,7 @@ print_r($_POST);
 if(isset($_POST['submitted'])){
 	
 	echo $_POST['productname'];
-	echo "ankit"
+
 	
 	
 	
