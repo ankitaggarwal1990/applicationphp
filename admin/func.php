@@ -24,18 +24,18 @@ $weight = $_POST['weight'];
 	
 	//mysql_select_db('database');
 	//$retval = mysql_query($query,$conn);
-	$query1 = $dbh->exec($query);
+	//$query1 = $dbh->exec($query);
 	
 	
-	if($query1)
-	{
-		echo "Submitted";
+	//if($query1)
+	//{
+	//	echo "Submitted";
 		//header('Location: addproduct.php?err=1');
-	}
-	else{
-		echo "error";
+	//}
+	//else{
+	//	echo "error";
 		//header('Location: addproduct.php?err=2');
-	}
+	//}
 }
 if(isset($_POST['transportsubmitted'])){
 	
