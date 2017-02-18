@@ -6,13 +6,13 @@ print_r($_POST);
 
 if(isset($_POST['submitted'])){
 	
-	echo $POST['productname'];
+	echo $_POST['productname'];
 	echo "ankit"
 	
 	
 	
 $product = $_POST['productid'];
-	echo $name1= $POST['productname'];
+	echo $name1= $_POST['productname'];
 $type = $_POST['producttype'];
 $productprice = $_POST['productprice'];
 $perishduration   = $_POST['perishduration'];
@@ -20,22 +20,22 @@ $weight = $_POST['weight'];
 	
 
 	echo $name1;
-	//$query = "INSERT INTO `products` (`productID`, `productType`, `productPrice`, `perishDuration`, `weight`, `product_name`, `status`) VALUES ('$product', '$type', '$productprice', '$perishduration', '$weight', '$name1', 0)";
+	$query = "INSERT INTO `products` (`productID`, `productType`, `productPrice`, `perishDuration`, `weight`, `product_name`, `status`) VALUES ('$product', '$type', '$productprice', '$perishduration', '$weight', '$name1', 0)";
 	
-	//mysql_select_db('database');
-	//$retval = mysql_query($query,$conn);
-	//$query1 = $dbh->exec($query);
+	mysql_select_db('database');
+	$retval = mysql_query($query,$conn);
+	$query1 = $dbh->exec($query);
 	
 	
-	//if($query1)
-	//{
-	//	echo "Submitted";
-		//header('Location: addproduct.php?err=1');
-	//}
-	//else{
-	//	echo "error";
-		//header('Location: addproduct.php?err=2');
-	//}
+	if($query1)
+	{
+		echo "Submitted";
+		header('Location: addproduct.php?err=1');
+	}
+	else{
+		echo "error";
+		header('Location: addproduct.php?err=2');
+	}
 }
 if(isset($_POST['transportsubmitted'])){
 	
