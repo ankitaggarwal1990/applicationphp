@@ -113,7 +113,7 @@ if (!$con) {
 }
 
 mysqli_select_db($con,"ajax_demo");
-$sql="SELECT FROM products";
+$sql="SELECT * FROM products";
 
 $result = mysqli_query($con,$sql);
 
@@ -121,10 +121,9 @@ $result = mysqli_query($con,$sql);
 <div>
 <table> 
 <tr>
-<th>Product ID</th>
+<th>PRODUCT ID</th>
+<th>PRODUCT NAME</th>
 <th>RFID TAG</th>
-<th>DESTINATION ID</th>
-<th>TRANSPORT ID</th>
 </tr>
 <tr>
 <?php
@@ -133,7 +132,8 @@ while($row = mysqli_fetch_array($result)) {
 ?>
 	
 
-<td><?php echo $row['order_id'] ?> </td>
+<td><?php echo $row['productID'] ?> </td>
+<td><?php echo $row['product_name'] ?> </td>
     <td><?php
 $rfid_sql = "SELECT rfid_id FROM rfid_details";
 $rfid_result = mysqli_query($con,$rfid_sql);
@@ -148,37 +148,19 @@ echo "</select>";
 
 ?></td>
 
-<td><?php
-$location_sql = "SELECT * FROM `location`";
-$location_result = mysqli_query($con,$location_sql);
+<!--<td><?php
+//$location_sql = "SELECT * FROM `location`";
+//$location_result = mysqli_query($con,$location_sql);
 
-echo "<select name='location'>";
-while ($location_row = mysqli_fetch_array($location_result)) {
+//echo "<select name='location'>";
+//while ($location_row = mysqli_fetch_array($location_result)) {
 	
-    echo "<option value='".$location_row['LocationID']."'>".$location_row['LocationName'] ."</option>";
+   // echo "<option value='".$location_row['LocationID']."'>".$location_row['LocationName'] ."</option>";
 	
-}
-echo "</select>";
-?></td>
+//}
+//echo "</select>";
+?></td>-->
 
-
-
-
-
-
-
-	<td><?php
-$transporter_sql = "SELECT * FROM `transporter`";
-$transporter_result = mysqli_query($con,$transporter_sql);
-
-echo "<select name='transporter'>";
-while ($transporter_row = mysqli_fetch_array($transporter_result)) {
-	
-    echo "<option value='".$transporter_row['TransporterID']."'>".$transporter_row['TransporterName'] ."</option>";
-	
-}
-echo "</select>";
-?></td>
 	
 </tr>
 	  <?php }
