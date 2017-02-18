@@ -67,6 +67,7 @@
        <legend class="legend" >ADD PRODUCT</legend>
   <form action="func.php" method="post">
   <div class="input"><label> <input name="productid" type="text" placeholder="PRODUCT ID" required/></label></div>
+	  <div class="input"><label><input name="productname" type="text" placeholder="PRODUCT NAME" required/></label></div>
   <div class="input"><label><input name="producttype" type="text" placeholder="PRODUCT TYPE" required/></label></div>
   <div class="input"><label> <input name="productprice" type="text" placeholder="PRODUCT PRICE" required/></label></div>
   <div class="input"><label><input name="perishduration" type="text" placeholder="PERISH DURATION" required/></label></div>
