@@ -107,13 +107,13 @@ td {
 <?php 
 
 //echo $value;
-$con = mysqli_connect('localhost','root','','database');
+$con = mysqli_connect('127.0.0.1:49646','azure','6#vWHD_$','localdb');
 if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
 }
 
 mysqli_select_db($con,"ajax_demo");
-$sql="SELECT DISTINCT order_id FROM orders";
+$sql="SELECT FROM products";
 
 $result = mysqli_query($con,$sql);
 
@@ -121,7 +121,7 @@ $result = mysqli_query($con,$sql);
 <div>
 <table> 
 <tr>
-<th>ORDER ID</th>
+<th>Product ID</th>
 <th>RFID TAG</th>
 <th>DESTINATION ID</th>
 <th>TRANSPORT ID</th>
