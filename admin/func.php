@@ -6,11 +6,12 @@ print_r($_POST);
 
 if(isset($_POST['submitted'])){
 $product = $_POST['productid'];
+	$name1= $POST['productname'];
 $type = $_POST['producttype'];
 $productprice = $_POST['productprice'];
 $perishduration   = $_POST['perishduration'];
 $weight = $_POST['weight'];
-	$name1= $POST['productname'];
+	
 
 	echo $name1;
 	$query = "INSERT INTO `products` (`productID`, `productType`, `productPrice`, `perishDuration`, `weight`, `product_name`, `status`) VALUES ('$product', '$type', '$productprice', '$perishduration', '$weight', '$name1', 0)";
