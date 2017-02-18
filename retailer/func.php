@@ -38,7 +38,8 @@ while($row = mysqli_fetch_array($result)) {
 		$sql = "INSERT INTO `orders`(`order_id`, `product_id`, `quantity`, `rfid_tag_id`, `destination_id`, `transport_id`, `delivery_time`, `product_total_amount`) VALUES ('$orderid','$product','$quantity',0,0,0,NOW(),0)";
 		//$query = "INSERT INTO `orders`(`order_id`, `product_id`, `quantity`, `rfid_tag_id`, `destination_id`, `delivery_time`, `transport_id`, `product_total_amount`) VALUES ('$orderid','$product','$quantity',1,1,1,now(),1)"
 		$result1 = mysqli_query($con,$sql);
-		
+		if($result1){ echo "Submitted";}
+		else{ echo "Not Submitted";}
 		//echo "dsdfsd";
 	}
 	
