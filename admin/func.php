@@ -10,10 +10,10 @@ $type = $_POST['producttype'];
 $productprice = $_POST['productprice'];
 $perishduration   = $_POST['perishduration'];
 $weight = $_POST['weight'];
-	$name= $POST['productname'];
+	$name1= $POST['productname'];
 
-	echo $name;
-	$query = "INSERT INTO `products` (`productID`, `productType`, `productPrice`, `perishDuration`, `weight`,`product_name`, `status`) VALUES ('$product', '$type', '$productprice', '$perishduration', '$weight', '$name', 0)";
+	echo $name1;
+	$query = "INSERT INTO `products` (`productID`, `productType`, `productPrice`, `perishDuration`, `weight`, `product_name`, `status`) VALUES ('$product', '$type', '$productprice', '$perishduration', '$weight', '$name1', 0)";
 	
 	//mysql_select_db('database');
 	//$retval = mysql_query($query,$conn);
