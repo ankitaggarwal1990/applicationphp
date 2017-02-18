@@ -5,13 +5,14 @@ require '../database-config.php';
 print_r($_POST);
 
 if(isset($_POST['submitted'])){
-$product = $_POST[productid];
-$type = $_POST[producttype];
-$productprice = $_POST[productprice];
-$perishduration   = $_POST[perishduration];
-$weight = $_POST[weight];
+$product = $_POST['productid'];
+$type = $_POST['producttype'];
+$productprice = $_POST['productprice'];
+$perishduration   = $_POST['perishduration'];
+$weight = $_POST['weight'];
+	$name= $POST['productname'];
 
-	$query = "INSERT INTO `products` (`productID`, `productType`, `productPrice`, `perishDuration`, `weight`) VALUES ('$product', '$type', '$productprice', '$perishduration', '$weight')";
+	$query = "INSERT INTO `products` (`productID`, `productType`, `productPrice`, `perishDuration`, `weight`,`product_name`, `status`) VALUES ('$product', '$type', '$productprice', '$perishduration', '$weight', '$name', 0)";
 	
 	//mysql_select_db('database');
 	//$retval = mysql_query($query,$conn);
