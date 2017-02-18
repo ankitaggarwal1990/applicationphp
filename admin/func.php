@@ -21,11 +21,11 @@ $weight = $_POST[weight];
 	if($query1)
 	{
 		echo "Submitted";
-		header('Location: index.php?err=1');
+		header('Location: addproduct.php?err=1');
 	}
 	else{
 		echo "error";
-		header('Location: index.php?err=2');
+		header('Location: addproduct.php?err=2');
 	}
 }
 if(isset($_POST['transportsubmitted'])){
