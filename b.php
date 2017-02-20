@@ -88,7 +88,7 @@ function showReatail() {
 	<section>
 	<div id="warehouseDiv" >
 		<table id='notes' class='records' border='0' cellspacing='0' cellpadding='0'>
-		<tr><th>WAREHOUSE EXIT TIME</th><th>DELIVERY ITEM  <?php $con = mysqli_connect('trident1.database.windows.net','trident','password@123','database_azure');
+		<tr><th>WAREHOUSE EXIT TIME</th><th>DELIVERY ITEMSSS  <?php $con = mysqli_connect('trident1.database.windows.net','trident','password@123','database_azure');
 if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
 }
