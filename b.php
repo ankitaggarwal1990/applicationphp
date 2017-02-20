@@ -88,13 +88,7 @@ function showReatail() {
 	<section>
 	<div id="warehouseDiv" >
 		<table id='notes' class='records' border='0' cellspacing='0' cellpadding='0'>
-		<tr><th>WAREHOUSE EXIT TIME</th><th>DELIVERY ITEMSSS  <?php $con = mysqli_connect('trident1.database.windows.net','trident','password@123','database_azure');
-if (!$con) {
-    die('Could not connect: ' . mysqli_error($con));
-}
-else{
-	echo "connect";
-} ?></th><th>SOURCE</th><th>CARRIER</th><th>RETAIL OUTLET</th></tr>
+		<tr><th>WAREHOUSE EXIT TIME</th><th>DELIVERY ITEMSSddddddddd</th><th>SOURCE</th><th>CARRIER</th><th>RETAIL OUTLET</th></tr>
 		<!--<tr><td>7/11/2016 2:45:00 AM</td><td>Rasgulla</td><td style="background-color:#006400";>Warehouse</td><td>ECCO1221</td><td>Outlet Kashmere Gate</td></tr>
 		        <!-- <tr><td>31/1/2016 11:00:00 AM</td><td>Barfee</td><td style="background-color:#006400";>Warehouse</td><td>ECCO8791</td><td>Outlet Greater Kailash II</td></tr>
 		         <tr><td>31/1/2016 12:00:00 AM</td><td>Rasgulla</td><td style="background-color:#006400";>Warehouse</td><td>ECCO1671</td><td>Outlet Ashram</td></tr>
