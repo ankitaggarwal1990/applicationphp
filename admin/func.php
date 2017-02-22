@@ -5,36 +5,27 @@ require '../database-config.php';
 print_r($_POST);
 
 if(isset($_POST['submitted'])){
-	
-	echo $_POST['productname'];
+$product = $_POST[productid];
+$type = $_POST[producttype];
+$productprice = $_POST[productprice];
+$perishduration   = $_POST[perishduration];
+$weight = $_POST[weight];
 
+	$query = "INSERT INTO `products` (`productID`, `productType`, `productPrice`, `perishDuration`, `weight`) VALUES ('$product', '$type', '$productprice', '$perishduration', '$weight')";
 	
-	
-	
-$product = $_POST['productid'];
-	echo $name1= $_POST['productname'];
-$type = $_POST['producttype'];
-$productprice = $_POST['productprice'];
-$perishduration   = $_POST['perishduration'];
-$weight = $_POST['weight'];
-	
-
-	echo $name1;
-	$query = "INSERT INTO `products` (`productID`, `productType`, `productPrice`, `perishDuration`, `weight`, `product_name`, `status`) VALUES ('$product', '$type', '$productprice', '$perishduration', '$weight', '$name1', 0)";
-	
-	mysql_select_db('database');
-	$retval = mysql_query($query,$conn);
+	//mysql_select_db('database');
+	//$retval = mysql_query($query,$conn);
 	$query1 = $dbh->exec($query);
 	
 	
 	if($query1)
 	{
 		echo "Submitted";
-		header('Location: addproduct.php?err=1');
+		header('Location: index.php?err=1');
 	}
 	else{
 		echo "error";
-		header('Location: addproduct.php?err=2');
+		header('Location: index.php?err=2');
 	}
 }
 if(isset($_POST['transportsubmitted'])){
@@ -149,6 +140,33 @@ $contact_no = $_POST[contact_no];
 	}
 }
 
+
+
+
+if(isset($_POST['attach_rfid'])){
+$warehouseid = $_POST[warehouseid];
+$warehousename = $_POST[warehousename];
+$location = $_POST[location];
+$contact_no = $_POST[contact_no];
+
+
+	$query = "INSERT INTO `warehouse`(`warehouse_name`, `warehouse_id`, `location`, `contact_no`) VALUES ('$warehouseid', '$warehousename', '$location', '$contact_no')";
+	
+	//mysql_select_db('database');
+	//$retval = mysql_query($query,$conn);
+	$query1 = $dbh->exec($query);
+	
+	
+	if($query1)
+	{
+		echo "Submitted";
+		header('Location: warehouses.php?err=1');
+	}
+	else{
+		echo "error";
+		header('Location: warehouses.php?err=2');
+	}
+}
 
 
 

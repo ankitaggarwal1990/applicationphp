@@ -47,6 +47,23 @@ tr:nth-child(even) {
   <a href="#services" onclick="w3_close()" class="w3-padding w3-hover-white">Track Product</a> 
   <a href="#designers" onclick="w3_close()" class="w3-padding w3-hover-white">Analytical Insight</a> 
   <a href="#packages" onclick="w3_close()" class="w3-padding w3-hover-white">Alerts</a>
+  
+  <a href="index.php">ALERTS</a>
+  <a href="addproduct.php">ADD PRODUCTS</a>
+  <a href="products.php">PRODUCTS</a>
+		  <a href="location.php">ADD LOCATION</a>
+		  <a href="warehouses.php">ADD WAREHOUSES</a>		  
+		  <a href="transporter.php">ADD TRANSPORTER</a>
+		  <a href="retailers.php"> ADD RETAILERS</a>
+		  <a href="rfid.php"> ADD RFID TAG</a>
+		  <a href="productattach.php">PRODUCT ATTACH WITH RFID TAG</a>
+		  <a href="orders.php">ORDERS</a>
+		  <a href="attach.php">ORDERS ATTACH WITH RFID AND TRANSPORTER</a>
+		  <a href="track.php">TRACK PRODUCT</a>
+		  <a href="logout.php">LOGOUT</a>
+          <a href="#">HI!  <?php echo $_SESSION['sess_username'];?></a>
+  
+  
   <a href="../logout.php" class="w3-padding w3-hover-white">Logout</a>
 </nav>
 

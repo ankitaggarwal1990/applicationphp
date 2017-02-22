@@ -51,7 +51,7 @@
         </div>   
 
 	<?php
-	$con = mysqli_connect('127.0.0.1:49646','azure','6#vWHD_$','localdb');
+	$con = mysqli_connect('localhost','root','','database');
 if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
 }
@@ -69,11 +69,11 @@ $result = mysqli_query($con,$sql);
 	<div class="login">
        <legend class="legend">PRODUCT DETAILS</legend>
 	<table class="table">
-		<tr><th>PRODUCT ID</th><th>PRODUCT NAME</th><th>PRODUCT TYPE</th><th>PRODUCT PRICE</th><th>PERISH DURATION</th><th>WEIGHT</th><tr>
+	<tr><th>PRODUCT ID</th><th>PRODUCT TYPE</th><th>PRODUCT PRICE</th><th>PERISH DURATION</th><th>WEIGHT</th><tr>
 	
 	<?php while($query1 = mysqli_fetch_array($result)) { ?>
-	<tr><td><?php echo $query1['productID'];?> </td><td><?php echo $query1['product_name'];?> </td> <td><?php echo $query1['productType'];?> </td> <td><?php echo $query1['productPrice'];?> </td> 
-	<td><?php echo $query1['perishDuration'];?> </td> <td> <?php echo $query1['weight'];?></td></tr>
+	<tr><td><?php echo $query1['productID'];?> </td> <td><?php echo $query1['productType'];?> </td> <td><?php echo $query1['productPrice'];?> </td> 
+	<td><?php echo $query1['perishDuration'];?> </td><?php echo $query1['weight'];?> <td> </td></tr>
 	
 	
 	<?php } ?>
