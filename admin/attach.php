@@ -1,8 +1,10 @@
 <?php 
     session_start();
+	require 'config.php';
+	
     $role = $_SESSION['sess_userrole'];
     if(!isset($_SESSION['sess_username']) || $role!="admin"){
-      header('Location: index.php?err=2');
+      header('Location: ../index.php?err=2');
     }
 ?>
 <!DOCTYPE html>
@@ -106,11 +108,6 @@ td {
 
 <?php 
 
-//echo $value;
-$con = mysqli_connect('localhost','root','','database');
-if (!$con) {
-    die('Could not connect: ' . mysqli_error($con));
-}
 
 mysqli_select_db($con,"ajax_demo");
 $sql="SELECT DISTINCT order_id FROM orders";

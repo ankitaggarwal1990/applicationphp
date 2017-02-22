@@ -1,5 +1,6 @@
 <?php 
     session_start();
+	require 'config.php';
     $role = $_SESSION['sess_userrole'];
     if(!isset($_SESSION['sess_username']) || $role!="admin"){
       header('Location: index.php?err=2');
@@ -16,8 +17,6 @@
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,40 +26,31 @@
     <![endif]-->
   </head>
   <body>
-  
-  
-  <nav class="w3-sidenav w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold" id="mySidenav"><br>
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-padding-xlarge w3-hide-large w3-display-topleft w3-hover-white" style="width:100%;font-size:22px">Close Menu</a>
-  <div class="w3-container">
-    <h3 class="w3-padding-64"><b>Haldiram</b></h3>
-  </div>
-  <!--<a href="#" onclick="w3_close()" class="w3-padding w3-hover-white">Home</a> 
-  <a href="#showcase" onclick="w3_close()" class="w3-padding w3-hover-white">Ready For Dispatch</a> 
-  <a href="#services" onclick="w3_close()" class="w3-padding w3-hover-white">Track Product</a> 
-  <a href="#designers" onclick="w3_close()" class="w3-padding w3-hover-white">Analytical Insight</a> 
-  <a href="#packages" onclick="w3_close()" class="w3-padding w3-hover-white">Alerts</a>-->
-  
-  <a href="index.php">ALERTS</a>
-  <a href="addproduct.php">ADD PRODUCTS</a>
-  <a href="products.php">PRODUCTS</a>
-		  <a href="location.php">ADD LOCATION</a>
-		  <a href="warehouses.php">ADD WAREHOUSES</a>		  
-		  <a href="transporter.php">ADD TRANSPORTER</a>
-		  <a href="retailers.php"> ADD RETAILERS</a>
-		  <a href="rfid.php"> ADD RFID TAG</a>
-		  <a href="productattach.php">PRODUCT ATTACH WITH RFID TAG</a>
-		  <a href="orders.php">ORDERS</a>
-		  <a href="attach.php">ORDERS ATTACH WITH RFID AND TRANSPORTER</a>
-		  <a href="track.php">TRACK PRODUCT</a>
-		  <a href="logout.php">LOGOUT</a>
-          <a href="#">HI!  <?php echo $_SESSION['sess_username'];?></a>
-  
-  
-  <a href="../logout.php" class="w3-padding w3-hover-white">Logout</a>
-</nav>
-  
     
-        
+        <div >
+		<table style="padding:10px; border-radius:15px; opacity=.8;">
+		<td><!--<a href="http://localhost:8080/Haldiram/index.php"><img src="../images/logo.png" alt="HALDIRAM"></a>--></td>
+		<td class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+		  <li><a href="index.php">ALERTS</a></li>
+		  <li><a href="addproduct.php">ADD PRODUCTS</a></li>
+		  <li><a href="products.php">PRODUCTS</a></li>
+		  <li><a href="location.php">ADD LOCATION</a></li>
+		  <li><a href="warehouses.php">ADD WAREHOUSES</a></li>		  
+		  <li><a href="transporter.php">ADD TRANSPORTER</a></li>
+		  <li><a href="retailers.php"> ADD RETAILERS</a></li>
+		  <li><a href="rfid.php"> ADD RFID TAG</a></li>
+		  <li><a href="productattach.php">PRODUCT ATTACH WITH RFID TAG</a></li>
+		  <li><a href="orders.php">ORDERS</a></li>
+		  <li><a href="attach.php">ORDERS ATTACH WITH RFID AND TRANSPORTER</a></li>
+		  <li><a href="track.php">TRACK PRODUCT</a></li>
+		  <li><a href="logout.php">LOGOUT</a></li>
+            <li><a href="#">HI!  <?php echo $_SESSION['sess_username'];?></a></li>
+            
+          </ul>
+		  </td>
+		  </table>
+        </div>  
 
      <div class="container homepage">
       <div class="row">
@@ -78,6 +68,7 @@
        <legend class="legend" >ADD PRODUCT</legend>
   <form action="func.php" method="post">
   <div class="input"><label> <input name="productid" type="text" placeholder="PRODUCT ID" required/></label></div>
+	  <div class="input"><label><input name="productname" type="text" placeholder="PRODUCT NAME" required/></label></div>
   <div class="input"><label><input name="producttype" type="text" placeholder="PRODUCT TYPE" required/></label></div>
   <div class="input"><label> <input name="productprice" type="text" placeholder="PRODUCT PRICE" required/></label></div>
   <div class="input"><label><input name="perishduration" type="text" placeholder="PERISH DURATION" required/></label></div>

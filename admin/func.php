@@ -1,17 +1,29 @@
 <?php
-
+    session_start();
+	require 'config.php';
+    $role = $_SESSION['sess_userrole'];
+    if(!isset($_SESSION['sess_username']) || $role!="admin"){
+      header('Location: ../index.php?err=2');
+    }
 require '../database-config.php';
+require 'config.php';
 
 print_r($_POST);
 
 if(isset($_POST['submitted'])){
-$product = $_POST[productid];
-$type = $_POST[producttype];
-$productprice = $_POST[productprice];
-$perishduration   = $_POST[perishduration];
-$weight = $_POST[weight];
+	
+	echo $_POST['productname'];
 
-	$query = "INSERT INTO `products` (`productID`, `productType`, `productPrice`, `perishDuration`, `weight`) VALUES ('$product', '$type', '$productprice', '$perishduration', '$weight')";
+	
+	
+	
+$product = $_POST['productid'];
+ $name1= $_POST['productname'];
+$type = $_POST['producttype'];
+$productprice = $_POST['productprice'];
+$perishduration   = $_POST['perishduration'];
+$weight = $_POST['weight'];
+	$query = "INSERT INTO `products` (`productID`, `productType`, `productPrice`, `perishDuration`, `weight`, `product_name`, `status`) VALUES ('$product', '$type', '$productprice', '$perishduration', '$weight', '$name1', 0)";
 	
 	//mysql_select_db('database');
 	//$retval = mysql_query($query,$conn);
@@ -21,11 +33,11 @@ $weight = $_POST[weight];
 	if($query1)
 	{
 		echo "Submitted";
-		header('Location: index.php?err=1');
+		header('Location: addproduct.php?err=1');
 	}
 	else{
 		echo "error";
-		header('Location: index.php?err=2');
+		header('Location: addproduct.php?err=2');
 	}
 }
 if(isset($_POST['transportsubmitted'])){
@@ -143,32 +155,42 @@ $contact_no = $_POST[contact_no];
 
 
 
-if(isset($_POST['attach_rfid'])){
-$warehouseid = $_POST[warehouseid];
-$warehousename = $_POST[warehousename];
-$location = $_POST[location];
-$contact_no = $_POST[contact_no];
+
+if(isset($_POST['attach_product'])){
+$sql="SELECT * FROM products";
 
 
-	$query = "INSERT INTO `warehouse`(`warehouse_name`, `warehouse_id`, `location`, `contact_no`) VALUES ('$warehouseid', '$warehousename', '$location', '$contact_no')";
-	
-	//mysql_select_db('database');
-	//$retval = mysql_query($query,$conn);
-	$query1 = $dbh->exec($query);
-	
-	
-	if($query1)
-	{
-		echo "Submitted";
-		header('Location: warehouses.php?err=1');
-	}
-	else{
-		echo "error";
-		header('Location: warehouses.php?err=2');
-	}
+$result = mysqli_query($con,$sql);
+
+
+$query2 = "SELECT rfid_id FROM rfid_details where status=0";
+$result2 = mysqli_query($con,$query2);
+$orderid =0;
+while($row2 = mysqli_fetch_array($result2)) {
+ echo $orderid = $row2['order_id'];
 }
+	
+	$orderid= $orderid + 1;
+
+echo $orderid;
+while($row = mysqli_fetch_array($result)) {
+	echo $row['productID'];
+	
+	echo $product = $row['productID'];
+	if(isset($_POST[$product])){
+		$quantity1 = "quantity".$_POST[$product];
+		echo $quantity = $_POST[$quantity1];
+		$sql = "UPDATE `rfid_details` SET `rfid_id`=[value-1],`type`=[value-2],`product_id`=[value-3],`status`=[value-4] ";
+		
+		$result1 = mysqli_query($con,$sql);
+		if($result1){ echo "Submitted";}
+		else{ echo "Not Submitted";}
+		//echo "dsdfsd";
+	}
+	
 
 
+}
 
 
 ?>

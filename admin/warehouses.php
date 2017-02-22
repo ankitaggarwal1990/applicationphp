@@ -1,8 +1,9 @@
 <?php 
     session_start();
+	require 'config.php';
     $role = $_SESSION['sess_userrole'];
     if(!isset($_SESSION['sess_username']) || $role!="admin"){
-      header('Location: index.php?err=2');
+      header('Location: ../index.php?err=2');
     }
 ?>
 <!DOCTYPE html>

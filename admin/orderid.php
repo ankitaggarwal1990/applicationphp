@@ -1,6 +1,7 @@
 <?php 
     session_start();
 	require 'config.php';
+	
     $role = $_SESSION['sess_userrole'];
     if(!isset($_SESSION['sess_username']) || $role!="admin"){
       header('Location: ../index.php?err=2');
@@ -106,12 +107,10 @@ td {
         </div>
 
 <?php 
-
-//echo $value;
-
+$orderid = $_GET['order_id'];
 
 mysqli_select_db($con,"ajax_demo");
-$sql="SELECT * FROM products";
+$sql="SELECT * FROM orders where order_id='$orderid'";
 
 $result = mysqli_query($con,$sql);
 
@@ -119,11 +118,16 @@ $result = mysqli_query($con,$sql);
 <div>
 <table> 
 <tr>
+<th>ORDER ID</th>
+<th>RETAILER ID</th>
+
 <th>PRODUCT ID</th>
 <th>PRODUCT NAME</th>
-<th>RFID TAG</th>
+<th>RFID ID</th>
+<th>WAREHOUSE</th>
+<th>TRANSPORTER</th>
+<th>RETAILER</th>
 </tr>
-<form action="func.php" method="POST"> 
 <tr>
 <?php
 $total_amount= 0;
@@ -131,35 +135,62 @@ while($row = mysqli_fetch_array($result)) {
 ?>
 	
 
-<td><input class='select' name="productID<?php echo $row['productID'] ?>" value="<?php echo $row['productID'] ?>" readonly="readonly"></td>
-<td><?php echo $row['product_name'] ?> </td>
-    <td><?php
-$rfid_sql = "SELECT rfid_id FROM rfid_details where status=0";
-$rfid_result = mysqli_query($con,$rfid_sql);
+<td><?php echo $row['order_id'] ?> </td>
 
-echo "<select name='rfid".$row['productID']."'>";
-while ($rfid_row = mysqli_fetch_array($rfid_result)) {
+<td><?php echo $row['retailer_id'] ?> </td>
+
+<td><?php echo $product_id=$row['product_id'];    
+
+$product_sql = "SELECT * FROM products where productID='$product_id'";
+$product_result = mysqli_query($con,$product_sql);
+
+?> </td>
+    <td><?php
+while ($product_row = mysqli_fetch_array($product_result)) {
 	
-    echo "<option value='".$rfid_row['rfid_id']."'>".$rfid_row['rfid_id'] ."</option>";
+    echo $product_row['product_name'];
 	
 }
-echo "</select>";
 
+?></td>
+
+<td><?php
+$rfid_sql = "SELECT * FROM rfid_details where product_id='$product_id'";
+$rfid_result = mysqli_query($con,$rfid_sql);
+
+while ($rfid_row = mysqli_fetch_array($rfid_result)) {
+	
+    echo $rfid_id=$rfid_row['rfid_id'];
+	
+	$tag_sql = "SELECT * FROM runtime_data where TagID='$rfid_id'";
+$tag_result = mysqli_query($con,$tag_sql);
+
+while ($tag_row = mysqli_fetch_array($tag_result)) {
+	
+?> 
+<td>
+
+ <?php	if($tag_row['deviceID']==""){echo "dsadasf";}
+ else{echo "<img src='../images/check.png' alt='HALDIRAM'>";}
+}
+?>
+</td>
+
+<?php	
+}
 ?></td>
 	
 </tr>
-
-
 	  <?php }
 mysqli_close($con);
 
 
 ?>
-<tr><td></td><td></td><td><button class="select" name="attach_product" type="submit" placeholder="Submit" >Submit</button></td></tr>
-</form>
+
 </table>
 
 </div>
 
 </body>
 </html>
+

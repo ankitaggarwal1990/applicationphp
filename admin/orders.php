@@ -1,3 +1,13 @@
+
+<?php 
+    session_start();
+	require 'config.php';
+    $role = $_SESSION['sess_userrole'];
+    if(!isset($_SESSION['sess_username']) || $role!="admin"){
+      header('Location: ../index.php?err=2');
+    }
+?>
+
 <html>
 <head>
 
@@ -74,13 +84,10 @@ td {
 <?php 
 
 //echo $value;
-$con = mysqli_connect('localhost','root','','database');
-if (!$con) {
-    die('Could not connect: ' . mysqli_error($con));
-}
+
 
 mysqli_select_db($con,"ajax_demo");
-$sql="SELECT DISTINCT order_id,destination_id FROM orders";
+$sql="SELECT DISTINCT order_id,destination_id FROM orders where status=1";
 
 $result = mysqli_query($con,$sql);
 
@@ -89,7 +96,7 @@ $result = mysqli_query($con,$sql);
 <table> 
 <tr>
 <th>ORDER ID</th>
-<th>DESTINATION</th>
+
 <th>RFID TAG</th>
 <th>TRANSPORT ID</th>
 </tr>
@@ -103,10 +110,8 @@ while($row = mysqli_fetch_array($result)) {
 
 <td><input class='select' name="order_id<?php echo $row['order_id'] ?>" value="<?php echo $row['order_id'] ?>" readonly="readonly"> </td>
 
-<td><input class='select' name="destination_id<?php echo $row['destination_id'] ?>" value="<?php echo $row['destination_id'];
-?>" readonly="readonly"></td>
 <td><?php
-$rfid_sql = "SELECT rfid_id FROM rfid_details";
+$rfid_sql = "SELECT rfid_id FROM rfid_details where status=0";
 $rfid_result = mysqli_query($con,$rfid_sql);
 
 echo "<select class='select'" ;
@@ -120,7 +125,7 @@ echo "</select>";
 ?></td>
 
 	<td><?php
-$transporter_sql = "SELECT * FROM `transporter`";
+$transporter_sql = "SELECT * FROM `transporter` where status=0";
 $transporter_result = mysqli_query($con,$transporter_sql);
 
 echo "<select class='select' ";
@@ -139,7 +144,7 @@ mysqli_close($con);
 
 ?>
 
-<tr><td></td><td></td><td></td><td><button class="select" name="attach_rfid" type="submit" placeholder="Submit" >Submit</button></td>
+<tr><td></td><td></td><td><button class="select" name="attach_rfid" type="submit" placeholder="Submit" >Submit</button></td>
   </form></tr>
 
 </table>

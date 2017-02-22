@@ -1,3 +1,13 @@
+<?php 
+    session_start();
+	require 'config.php';
+    $role = $_SESSION['sess_userrole'];
+    if(!isset($_SESSION['sess_username']) || $role!="admin"){
+      header('Location: ../index.php?err=2');
+    }
+?>
+
+
 <?php
 //echo "abc";
 // PHP Data Objects(PDO) Sample Code:
@@ -19,14 +29,7 @@ if (!$conn) {
 else{
 	//echo "connect11111";
 }
-
 ?>
-
-
-
-
-
-
 
 <html>
 <head>
@@ -112,23 +115,25 @@ if( $stmt === false) {
 <th>GROSS WEIGHT</th>
 <th>TIME STAMP</th>
 </tr>
-<tr>
+	
 <?php
 while($row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC)) {
 ?>
-<td><?php $row['deviceid'] ?></td>
-<td><?php $row['TagID'] ?></td>
-<td><?php $row['GrossWeight'] ?></td>
-<td><?php $row['time_stamp'] ?></td>
+	<tr>
 
+<td><?php echo $row['deviceid'] ?></td>
+<td><?php echo $row['TagID'] ?></td>
+<td><?php echo $row['GrossWeight'] ?></td>
+<td><?php echo $row['time_stamp'] ?></td>
+</tr>
 <?php
 }
 ?>
-</tr>
+
 
 </table>
 
 </div>
 
-</body>
-</html>
+</body
+	</html>
